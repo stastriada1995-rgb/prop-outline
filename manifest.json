@@ -1,9 +1,9 @@
 {
   "name": "Обводка реквизита",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "manifest_version": 1,
   "description": "Рамка-обводка для элементов слоя Props с выбором цвета, толщины, отступа и стиля линии.",
   "author": "DM",
-  "icon": "./icon.svg",
-  "background_url": "./background.html"
+  "icon": "https://stastriada1995-rgb.github.io/prop-outline/icon.svg",
+  "background_url": "https://stastriada1995-rgb.github.io/prop-outline/background.html"
 }
