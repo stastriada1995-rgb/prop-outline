@@ -1,5 +1,5 @@
 {
-  "name": "Outlining of props",
+  "name": "Prop Outline",
   "version": "1.2.1",
   "manifest_version": 1,
   "description": "A stroke/outline for elements in the Props layer, with options for color, thickness, offset, and line style.",
