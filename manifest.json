@@ -1,8 +1,8 @@
 {
-  "name": "Обводка реквизита",
+  "name": "Outlining of props",
   "version": "1.2.1",
   "manifest_version": 1,
-  "description": "Рамка-обводка для элементов слоя Props с выбором цвета, толщины, отступа и стиля линии.",
+  "description": "A stroke/outline for elements in the Props layer, with options for color, thickness, offset, and line style.",
   "author": "DM",
   "icon": "https://stastriada1995-rgb.github.io/prop-outline/icon.svg",
   "background_url": "https://stastriada1995-rgb.github.io/prop-outline/background.html"
