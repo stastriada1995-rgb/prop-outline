@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Обводка</title>
+<style>
+  :root { --text: #fff; --muted: rgba(255,255,255,.7); --line: rgba(255,255,255,.18); --accent: #bb99ff; --accent-text: #000; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: transparent; color: var(--text); font: 14px/1.35 Roboto, system-ui, sans-serif; }
+  main { padding: 14px 16px 16px; display: grid; gap: 12px; }
+  h1 { font-size: 15px; font-weight: 600; margin: 0; display: flex; justify-content: space-between; align-items: baseline; }
+  h1 small { font-weight: 400; color: var(--muted); font-size: 12px; }
+  label, .lbl { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-bottom: 4px; }
+  output { color: var(--text); font-variant-numeric: tabular-nums; }
+  input[type=range] { width: 100%; accent-color: var(--accent); margin: 0; }
+  .color-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  input[type=color] { width: 34px; height: 28px; padding: 0; border: 1px solid var(--line); border-radius: 6px; background: none; cursor: pointer; }
+  .sw { width: 22px; height: 22px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; padding: 0; }
+  .sw[aria-pressed=true] { border-color: var(--text); }
+  .seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .seg button { background: none; border: 0; color: var(--text); padding: 6px 4px; cursor: pointer; font: inherit; font-size: 12px; display: grid; justify-items: center; gap: 2px; }
+  .seg button + button { border-left: 1px solid var(--line); }
+  .seg button[aria-pressed=true] { background: var(--accent); color: var(--accent-text); }
+  .seg svg { width: 34px; height: 10px; }
+  .actions { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-top: 2px; }
+  .btn { border: 0; border-radius: 8px; padding: 8px 12px; font: inherit; font-weight: 600; cursor: pointer; }
+  .primary { background: var(--accent); color: var(--accent-text); }
+  .ghost { background: none; color: var(--text); border: 1px solid var(--line); }
+  .note { margin: 0; font-size: 12px; color: var(--muted); border-left: 3px solid var(--accent); padding-left: 8px; }
+  .primary:disabled { opacity: .6; cursor: default; }
+  .ghost:disabled { opacity: .4; cursor: default; }
+</style>
+  <script type="module" crossorigin src="./assets/popover-BRp-XjwW.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/shared-C6Et7AvR.js">
+</head>
+<body>
+<main>
+  <h1>Обводка <small id="count"></small></h1>
+
+  <div>
+    <div class="lbl"><span>Цвет</span></div>
+    <div class="color-row" id="swatches">
+      <input type="color" id="color" aria-label="Свой цвет">
+    </div>
+  </div>
+
+  <div>
+    <label for="width"><span>Толщина линии</span><output id="widthOut"></output></label>
+    <input type="range" id="width" min="1" max="40" step="0.5">
+  </div>
+
+  <div>
+    <label for="padding"><span>Отступ от края</span><output id="paddingOut"></output></label>
+    <input type="range" id="padding" min="-20" max="60" step="1">
+  </div>
+
+  <div>
+    <label for="opacity"><span>Непрозрачность</span><output id="opacityOut"></output></label>
+    <input type="range" id="opacity" min="0.1" max="1" step="0.05">
+  </div>
+
+  <div>
+    <div class="lbl"><span>Линия</span></div>
+    <div class="seg" id="dash">
+      <button data-v="solid"><svg viewBox="0 0 34 10"><line x1="2" y1="5" x2="32" y2="5" stroke="currentColor" stroke-width="2.5"/></svg>Сплошная</button>
+      <button data-v="dashed"><svg viewBox="0 0 34 10"><line x1="2" y1="5" x2="32" y2="5" stroke="currentColor" stroke-width="2.5" stroke-dasharray="7 4"/></svg>Штрих</button>
+      <button data-v="dotted"><svg viewBox="0 0 34 10"><line x1="2" y1="5" x2="32" y2="5" stroke="currentColor" stroke-width="2.5" stroke-dasharray="2.5 2.5"/></svg>Точки</button>
+    </div>
+  </div>
+
+  <div>
+    <div class="lbl"><span>Форма рамки</span></div>
+    <div class="seg" id="shape">
+      <button data-v="CONTOUR">По контуру</button>
+      <button data-v="RECTANGLE">Прямоугольник</button>
+      <button data-v="CIRCLE">Овал</button>
+    </div>
+  </div>
+
+  <p class="note" id="note" hidden></p>
+
+  <div class="actions">
+    <button class="btn primary" id="apply">Применить</button>
+    <button class="btn ghost" id="remove">Убрать</button>
+  </div>
+</main>
+</body>
+</html>

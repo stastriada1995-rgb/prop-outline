@@ -1,0 +1,9 @@
+{
+  "name": "Обводка реквизита",
+  "version": "1.2.0",
+  "manifest_version": 1,
+  "description": "Рамка-обводка для элементов слоя Props с выбором цвета, толщины, отступа и стиля линии.",
+  "author": "DM",
+  "icon": "./icon.svg",
+  "background_url": "./background.html"
+}
