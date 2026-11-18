@@ -1,47 +1,47 @@
-# Обводка реквизита для Owlbear Rodeo
+# Prop Outlines for Owlbear Rodeo
 
-Расширение для [Owlbear Rodeo](https://www.owlbear.rodeo/), которое добавляет рамку-обводку вокруг предметов на слое **Props**: по видимому контуру картинки, прямоугольником или овалом.
+An extension for [Owlbear Rodeo](https://www.owlbear.rodeo/) that adds an outline around objects on the **Props** layer—following the image's outer contour, a custom outline path, or an oval shape.
 
-![Обводка реквизита на карте](screenshot.png)
+![Outlining of props on the map](screenshot.png)
 
-## Возможности
+## Features
 
-- **Обводка по контуру.** Рамка повторяет форму PNG с прозрачностью, а не просто обводит его квадратом.
-- **Прямоугольник или овал**, если нужна простая рамка.
-- **Настройки:** цвет (готовая палитра или свой), толщина линии, отступ от края, непрозрачность, стиль линии (сплошная, штрих, точки).
-- **Рамка следует за предметом:** двигается, поворачивается, меняет размер, скрывается, копируется и удаляется вместе с ним.
-- **Рамку нельзя случайно выделить:** клики проходят сквозь неё на сам предмет.
-- **Можно обвести сразу несколько предметов.**
-- **Настройки запоминаются:** следующая обводка создаётся с последними выбранными параметрами.
+- **Contour outlining:** The frame follows the shape of a PNG image (including its transparency) rather than simply enclosing it in a rectangle.
+- **Rectangular or oval shapes:** Available for when a simple frame is needed.
+- **Customizable settings:** Choose colors (from a preset palette or your own), line thickness, offset from the edge, opacity, and line style (solid, dashed, or dotted).
+- **Frame follows the object:** The frame moves, rotates, resizes, hides, duplicates, and deletes in sync with the object it surrounds.
+- **Prevents accidental selection:** Clicks pass through the frame, allowing you to interact directly with the object underneath.
+- **Multiple objects can be outlined at once.**
+- **Persistent settings:** New frames are automatically created using the parameters from your most recent selection.
 
-## Установка
+## Installation
 
-1. В Owlbear Rodeo откройте **Профиль → Extensions → Add Custom Extension**.
-2. Вставьте ссылку:
+1. In Owlbear Rodeo, go to **Profile → Extensions → Add Custom Extension**.
+2. Paste the link:
    ```
    https://stastriada1995-rgb.github.io/prop-outline/manifest.json
    ```
-3. Нажмите **Add**.
-4. В комнате откройте значок пазла (Extensions) и включите **«Обводка реквизита»**.
+3. Click **Add**.
+4. In the room, open the puzzle-piece icon (Extensions) and enable **"Prop Outline"**.
 
-## Как пользоваться
+## How to use
 
-1. Выделите один или несколько предметов на слое Props.
-2. Правый клик → **«Обводка…»**.
-3. Выберите форму, цвет и толщину и нажмите **«Применить»**.
+1. Select one or more items on the Props layer.
+2. Right-click → **"Outline…"**.
+3. Choose the shape, color, and thickness, then click **"Apply"**.
 
-![Окно настроек](settings.png)
+![Settings window](settings.png)
 
-Чтобы изменить обводку, снова откройте **«Обводка…»**: изменения видны сразу. Убрать обводку можно кнопкой **«Убрать»** в окне или пунктом меню **«Убрать обводку»**.
+To modify the stroke, open **"Stroke…"** again; the changes will be visible immediately. You can remove the stroke by clicking the **"Remove"** button in the window or by selecting the **"Remove stroke"** menu option.
 
-## Полезно знать
+## Good to know
 
-- **Толщина и отступ** указаны в пикселях сцены. При стандартной сетке клетка равна 150 px.
-- **Отрицательный отступ** рисует рамку внутри предмета.
-- **Размер рамки** после масштабирования предмета подгоняет клиент мастера (GM). Перемещение и поворот работают у всех сразу.
-- **Если контур не удалось прочитать** (например, картинка взята с чужого сайта, который это запрещает), рисуется прямоугольная рамка, а в окне появляется предупреждение.
-- **Мелкие детали:** контур строится по уменьшенной копии картинки и слегка сглаживается, поэтому тонкие детали толщиной в пару пикселей обходятся общим контуром.
+- **Thickness and offset** are measured in scene pixels. On the standard grid, one cell equals 150 px.
+- A **negative offset** draws the border inside the object.
+- The **border size** automatically adjusts when an object is scaled. Moving or rotating an object affects the border accordingly.
+- **If the outline cannot be generated** (for example, if the image is sourced from a website that prohibits such access), a rectangular border is drawn instead, and a warning appears in the window.
+- **Fine details:** The outline is generated based on a downscaled version of the image and is slightly smoothed; consequently, very fine details—only a few pixels wide—are encompassed by the general outline.
 
-## Версия
+## Version
 
 1.2.1
